@@ -90,6 +90,15 @@ Enhanced for full-screen browser automation:
 
 ---
 
+## **⚠️ RECENT FIX: Git MCP Extension**
+**Issue**: Git MCP server failed after repository rename  
+**Cause**: Configuration pointed to parent directory instead of specific repo  
+**Solution**: Updated repository path to `C:\Users\leung\github-repos\claude`  
+**Status**: FIXED - Configuration updated and committed  
+**Action Required**: Restart Claude Desktop to reload MCP configuration  
+
+---
+
 ## **⚙️ MCP SERVERS STATUS**
 
 ### **Production Ready**
