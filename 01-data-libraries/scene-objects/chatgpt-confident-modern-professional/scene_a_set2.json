@@ -1,0 +1,43 @@
+{
+  "id": "chatgpt-scene_a_set2",
+  "created": "2025-07-14T17:30:00.000Z",
+  "prompt": "Create scene objects for a Confident Modern Professional photoshoot based on uploaded brand context file",
+  "sceneObject": {
+    "scene_id": "scene_a_set2",
+    "subject": "primary_executive",
+    "wardrobe": "crisp_white_oversized_cotton_button_down_sleeves_rolled",
+    "pose": "standing with arms crossed near sage green wall",
+    "expression": "calm confidence, relaxed posture, slight smile",
+    "environment": {
+      "location": "modern_industrial_loft_apartment",
+      "wall_color": "sage_green_matte",
+      "architectural_elements": ["exposed_wood_beam"]
+    },
+    "lighting": {
+      "color_temperature": "5200K_true_neutral_daylight",
+      "source": "soft_window_light_45_degrees",
+      "intensity": "75_percent_natural_light",
+      "shadow_behavior": "15_percent_opacity_soft_edges",
+      "diffusion": "sheer_material",
+      "enforcement": "NO yellow, orange, or warm cast. Whites must appear neutral. Skin tones must be balanced. Sage wall must appear true."
+    }
+  },
+  "metadata": {
+    "source": "chatgpt-4",
+    "brand_context": "Confident Modern Professional",
+    "url": "https://chatgpt.com/share/687569fe-77dc-800e-86bc-2e9800b368b6",
+    "extracted_date": "2025-07-14",
+    "category": "portrait-professional",
+    "structure_analysis": {
+      "topLevelKeys": ["scene_id", "subject", "wardrobe", "pose", "expression", "environment", "lighting"],
+      "depth": 3,
+      "complexity": "medium",
+      "hasLighting": true,
+      "hasEnvironment": true,
+      "hasCamera": false,
+      "subjectType": "primary_executive"
+    },
+    "quality_score": 9,
+    "processing_date": "2025-07-14T17:30:00.000Z"
+  }
+}

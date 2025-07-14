@@ -1,0 +1,60 @@
+{
+  "dataset_id": "chatgpt-confident-modern-professional",
+  "created": "2025-07-14T17:30:00.000Z",
+  "source": {
+    "platform": "ChatGPT-4",
+    "url": "https://chatgpt.com/share/687569fe-77dc-800e-86bc-2e9800b368b6",
+    "brand_context": "Confident Modern Professional",
+    "extraction_date": "2025-07-14"
+  },
+  "prompt": "Create scene objects for a Confident Modern Professional photoshoot based on uploaded brand context file",
+  "summary": {
+    "total_scenes": 5,
+    "categories": {
+      "portrait-professional": 2,
+      "lifestyle-professional": 1,
+      "collaboration-professional": 1,
+      "macro-abstract": 1
+    },
+    "complexity_distribution": {
+      "medium": 3,
+      "complex": 2
+    },
+    "features": {
+      "has_lighting": 5,
+      "has_environment": 4,
+      "has_camera": 1,
+      "multiple_subjects": 1
+    }
+  },
+  "scene_files": [
+    "scene_a_set2.json",
+    "scene_b_set2.json", 
+    "scene_c_set2.json",
+    "scene_d_set2.json",
+    "macro_water_droplets_abstract.json"
+  ],
+  "analysis": {
+    "chatgpt_patterns": [
+      "Consistent lighting enforcement across all scenes",
+      "Detailed environment descriptions with specific materials",
+      "Clear pose and expression direction",
+      "Technical precision in camera and lighting specs",
+      "Brand consistency maintained throughout"
+    ],
+    "structure_consistency": "High - All scenes follow similar hierarchical organization",
+    "technical_accuracy": "Excellent - Professional photography specifications",
+    "brand_alignment": "Perfect - All scenes align with Confident Modern Professional brand",
+    "actionability": "High - Clear implementation direction provided"
+  },
+  "quality_scores": {
+    "average": 9.2,
+    "range": "9-10",
+    "assessment_criteria": [
+      "Completeness of scene description",
+      "Technical specification accuracy", 
+      "Brand consistency",
+      "Implementation clarity"
+    ]
+  }
+}
