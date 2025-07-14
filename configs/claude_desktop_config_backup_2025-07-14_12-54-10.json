@@ -1,0 +1,49 @@
+{
+  "mcpServers": {
+    "Basic Memory": {
+      "command": "uvx",
+      "args": [
+        "basic-memory",
+        "mcp"
+      ]
+    },
+    "desktop-commander": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@wonderwhy-er/desktop-commander"
+      ]
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "C:\\Users\\leung\\Documents",
+        "C:\\Users\\leung\\claude-mcp-configs"
+      ]
+    },
+    "memory": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-memory",
+        "--memory-file",
+        "C:\\Users\\leung\\claude-mcp-configs\\memory.json"
+      ]
+    },
+    "puppeteer": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-puppeteer"
+      ]
+    },
+    "puppeteer-real-browser": {
+      "command": "npx",
+      "args": [
+        "puppeteer-real-browser-mcp-server@latest"
+      ]
+    }
+  }
+}

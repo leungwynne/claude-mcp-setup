@@ -1,0 +1,121 @@
+{
+  "globalSettings": {
+    "auditLogging": true,
+    "cacheEnabled": true,
+    "maxToolsPerServer": 20,
+    "performanceMode": "optimized",
+    "securityMode": "enhanced"
+  },
+  "mcpServers": {
+    "Sequential Thinking": {
+      "_creator": "mcp_linker",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ],
+      "command": "npx",
+      "updated_at": "2025-07-14T20:01:53.078594+00:00"
+    },
+    "basic-memory": {
+      "args": [
+        "basic-memory",
+        "mcp"
+      ],
+      "command": "uvx",
+      "env": {
+        "BASIC_MEMORY_CACHE_ENABLED": "true",
+        "BASIC_MEMORY_INDEXING_ENABLED": "true",
+        "BASIC_MEMORY_MAX_ENTRIES": "1000"
+      }
+    },
+    "desktop-commander": {
+      "args": [
+        "-y",
+        "@wonderwhy-er/desktop-commander"
+      ],
+      "command": "npx",
+      "env": {
+        "DC_ALLOWED_DIRECTORIES": "C:\\Users\\leung\\Documents;C:\\Users\\leung\\Projects;C:\\Users\\leung\\claude-mcp-configs;C:\\Users\\leung\\github-repos",
+        "DC_AUDIT_ENABLED": "true",
+        "DC_BLOCKED_PATTERNS": "*.key;*.pem;.env;*.secret",
+        "DC_LOG_LEVEL": "info",
+        "DC_MAX_FILE_SIZE": "10485760"
+      }
+    },
+    "filesystem": {
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "C:\\Users\\leung\\github-repos"
+      ],
+      "command": "npx",
+      "env": {
+        "FS_MAX_FILE_SIZE": "5242880",
+        "FS_READ_ONLY": "false"
+      }
+    },
+    "git": {
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-git",
+        "--repository",
+        "C:\\Users\\leung\\github-repos"
+      ],
+      "command": "npx"
+    },
+    "github": {
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ],
+      "command": "npx",
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "your-github-token-here"
+      }
+    },
+    "mongodb": {
+      "args": [
+        "-y",
+        "mongo-mcp"
+      ],
+      "command": "npx",
+      "env": {
+        "MONGODB_URI": "mongodb://localhost:27017/claude_db"
+      }
+    },
+    "puppeteer": {
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-puppeteer"
+      ],
+      "command": "npx",
+      "env": {
+        "PUPPETEER_HEADLESS": "true",
+        "PUPPETEER_IDLE_TIMEOUT": "30000",
+        "PUPPETEER_POOL_MAX": "3",
+        "PUPPETEER_POOL_MIN": "1"
+      }
+    },
+    "slack": {
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-slack"
+      ],
+      "command": "npx",
+      "env": {
+        "SLACK_BOT_TOKEN": "your-slack-bot-token-here",
+        "SLACK_TEAM_ID": "your-slack-team-id"
+      }
+    },
+    "stability-ai": {
+      "args": [
+        "-y",
+        "mcp-server-stability-ai"
+      ],
+      "command": "npx",
+      "env": {
+        "STABILITY_API_KEY": "your-stability-api-key-here"
+      }
+    }
+  }
+}

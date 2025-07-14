@@ -1,0 +1,37 @@
+# Security - Never commit these
+*.token
+*.key
+*.pem
+.env
+.env.*
+
+# Configuration files with sensitive data
+*config*token*
+*secrets*
+
+# Backup files
+*.bak
+*.backup
+
+# Logs
+*.log
+logs/
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Node modules (if any MCP servers need them)
+node_modules/
+
+# Python
+__pycache__/
+*.pyc
+
+# IDE
+.vscode/settings.json
+.idea/
+
+# Personal notes (optional)
+personal-notes.md
+temp-*
