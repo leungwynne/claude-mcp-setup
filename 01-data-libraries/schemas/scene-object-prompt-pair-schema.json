@@ -1,0 +1,299 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Scene Object + Prompt Pair Schema",
+  "description": "Schema for storing ChatGPT scene objects paired with their generating prompts for analysis and learning",
+  "type": "object",
+  "required": ["metadata", "prompt", "sceneObject", "analysis"],
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "required": ["id", "created", "source", "version"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^scene-[0-9]{8}-[0-9]{6}$",
+          "description": "Unique identifier: scene-YYYYMMDD-HHMMSS"
+        },
+        "created": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Creation timestamp"
+        },
+        "source": {
+          "type": "string",
+          "enum": ["chatgpt-3.5", "chatgpt-4", "chatgpt-4-turbo", "other"],
+          "description": "Source AI model"
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$",
+          "description": "Entry version"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Categorical tags for search and organization"
+        },
+        "category": {
+          "type": "string",
+          "enum": [
+            "character-interaction",
+            "environment-description", 
+            "action-sequence",
+            "dialogue-scene",
+            "emotional-moment",
+            "technical-description",
+            "creative-narrative",
+            "instructional-content",
+            "other"
+          ],
+          "description": "Primary scene category"
+        },
+        "complexity": {
+          "type": "string",
+          "enum": ["simple", "moderate", "complex", "highly-complex"],
+          "description": "Scene complexity level"
+        }
+      }
+    },
+    "prompt": {
+      "type": "object",
+      "required": ["text", "type"],
+      "properties": {
+        "text": {
+          "type": "string",
+          "description": "The exact natural language prompt given to ChatGPT"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["direct-request", "context-continuation", "modification-request", "iterative-refinement"],
+          "description": "Type of prompt interaction"
+        },
+        "context": {
+          "type": "string",
+          "description": "Any relevant context or conversation history"
+        },
+        "wordCount": {
+          "type": "integer",
+          "description": "Word count of the prompt"
+        },
+        "keyElements": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Key elements requested in the prompt"
+        }
+      }
+    },
+    "sceneObject": {
+      "type": "object",
+      "required": ["rawJson", "structure"],
+      "properties": {
+        "rawJson": {
+          "type": "object",
+          "description": "The complete, unmodified scene object JSON from ChatGPT"
+        },
+        "structure": {
+          "type": "object",
+          "required": ["topLevelKeys", "dataTypes", "nesting"],
+          "properties": {
+            "topLevelKeys": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "All top-level keys in the scene object"
+            },
+            "dataTypes": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              },
+              "description": "Data type of each key (string, array, object, etc.)"
+            },
+            "nesting": {
+              "type": "object",
+              "properties": {
+                "maxDepth": {
+                  "type": "integer",
+                  "description": "Maximum nesting depth"
+                },
+                "nestedObjects": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "description": "Paths to nested objects"
+                }
+              }
+            },
+            "arrayStructures": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "path": {
+                    "type": "string"
+                  },
+                  "elementType": {
+                    "type": "string"
+                  },
+                  "length": {
+                    "type": "integer"
+                  }
+                }
+              },
+              "description": "Analysis of array structures within the object"
+            }
+          }
+        },
+        "contentAnalysis": {
+          "type": "object",
+          "properties": {
+            "hasCharacters": {
+              "type": "boolean"
+            },
+            "hasDialogue": {
+              "type": "boolean"
+            },
+            "hasActions": {
+              "type": "boolean"
+            },
+            "hasEnvironment": {
+              "type": "boolean"
+            },
+            "hasEmotions": {
+              "type": "boolean"
+            },
+            "estimatedWordCount": {
+              "type": "integer"
+            },
+            "primaryElements": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "analysis": {
+      "type": "object",
+      "required": ["promptToObjectAlignment", "patterns"],
+      "properties": {
+        "promptToObjectAlignment": {
+          "type": "object",
+          "properties": {
+            "requestFulfillment": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "description": "How well the object fulfills the prompt (0-1 scale)"
+            },
+            "unexpectedElements": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Elements in object not explicitly requested"
+            },
+            "missingElements": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Elements requested but not present"
+            },
+            "extrapolations": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "How ChatGPT extrapolated beyond the prompt"
+            }
+          }
+        },
+        "patterns": {
+          "type": "object",
+          "properties": {
+            "structuralPatterns": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Observed structural patterns in the JSON"
+            },
+            "namingConventions": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Patterns in key naming and structure"
+            },
+            "contentPatterns": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Patterns in content generation and style"
+            }
+          }
+        },
+        "insights": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Key insights about prompt interpretation and object generation"
+        },
+        "similarityToOthers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "sceneId": {
+                "type": "string"
+              },
+              "similarityScore": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "similarityType": {
+                "type": "string",
+                "enum": ["structural", "content", "prompt-style", "category"]
+              }
+            }
+          }
+        }
+      }
+    },
+    "validation": {
+      "type": "object",
+      "properties": {
+        "jsonValid": {
+          "type": "boolean",
+          "description": "Whether the scene object is valid JSON"
+        },
+        "schemaCompliance": {
+          "type": "boolean",
+          "description": "Whether it follows common scene object patterns"
+        },
+        "qualityScore": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 10,
+          "description": "Overall quality assessment (0-10)"
+        },
+        "notes": {
+          "type": "string",
+          "description": "Additional validation notes"
+        }
+      }
+    }
+  }
+}

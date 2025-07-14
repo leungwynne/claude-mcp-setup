@@ -1,0 +1,108 @@
+{
+  "metadata": {
+    "id": "scene-20250714-204500",
+    "created": "2025-07-14T20:45:00Z",
+    "source": "chatgpt-4",
+    "version": "1.0.0",
+    "tags": ["photography", "macro", "oil-droplets", "technical", "abstract"],
+    "category": "technical-description",
+    "complexity": "complex"
+  },
+  "prompt": {
+    "text": "Create a structured scene object for a macro photography shot of abstract oil droplets",
+    "type": "direct-request",
+    "context": "Photography instruction and technical setup",
+    "wordCount": 13,
+    "keyElements": ["macro photography", "oil droplets", "abstract", "structured scene"]
+  },
+  "sceneObject": {
+    "rawJson": {
+      "scene_id": "macro_abstract_oil_droplets",
+      "subject": "macro_clean_oil_droplets",
+      "camera": {
+        "lens": "100mm_macro_lens",
+        "focus_mode": "manual_focus_on_droplet_edges",
+        "aperture": "f/8",
+        "depth_of_field": "shallow_with_soft_background_falloff",
+        "framing": "top_down_flatlay",
+        "composition": "cluster_of_five_droplets_with_asymmetric_shapes"
+      },
+      "surface": {
+        "material": "frosted_glass_panel",
+        "color": "cool_silver_grey",
+        "reflectivity": "semi_matte_diffuse",
+        "texture": "invisible_microsmooth"
+      },
+      "liquid_properties": {
+        "type": "clear_viscous_cosmetic_oil",
+        "shape_behavior": "slightly_flatter_asymmetric_droplets_due_to_viscosity",
+        "edge_definition": "soft_blended_edges_with_organic_curves"
+      },
+      "lighting": {
+        "type": "soft_diffused_backlight",
+        "angle": "top_left_45_degrees",
+        "shadow_behavior": "gradient_shadows_blended_beneath_each_droplet",
+        "highlight_behavior": "glossy_soft_reflective_surface_glow",
+        "color_temperature": "5400K_studio_daylight",
+        "movement": "no_yellow_amber_or_color_tint_background_must_remain_neutral_cool_gray_professional"
+      },
+      "style_reference": {
+        "mood": "clean_abstract_modern",
+        "emotion": "precision_and_stillness",
+        "inspiration": "cosmetic_macro_editorial"
+      }
+    },
+    "structure": {
+      "topLevelKeys": ["scene_id", "subject", "camera", "surface", "liquid_properties", "lighting", "style_reference"],
+      "dataTypes": {
+        "scene_id": "string",
+        "subject": "string", 
+        "camera": "object",
+        "surface": "object",
+        "liquid_properties": "object",
+        "lighting": "object",
+        "style_reference": "object"
+      },
+      "nesting": {
+        "maxDepth": 2,
+        "nestedObjects": ["camera", "surface", "liquid_properties", "lighting", "style_reference"]
+      },
+      "arrayStructures": []
+    },
+    "contentAnalysis": {
+      "hasCharacters": false,
+      "hasDialogue": false,
+      "hasActions": false,
+      "hasEnvironment": true,
+      "hasEmotions": false,
+      "estimatedWordCount": 150,
+      "primaryElements": ["technical_specs", "lighting_setup", "camera_settings", "material_properties"]
+    }
+  },
+  "analysis": {
+    "promptToObjectAlignment": {
+      "requestFulfillment": 0.95,
+      "unexpectedElements": ["color_temperature", "professional_constraints", "editorial_style"],
+      "missingElements": [],
+      "extrapolations": ["Detailed technical specifications", "Professional photography constraints", "Specific equipment recommendations"]
+    },
+    "patterns": {
+      "structuralPatterns": ["nested_object_hierarchy", "technical_specification_grouping", "descriptive_string_values"],
+      "namingConventions": ["snake_case_keys", "descriptive_compound_names", "technical_terminology"],
+      "contentPatterns": ["equipment_focused", "technical_precision", "professional_standards"]
+    },
+    "insights": [
+      "ChatGPT interpreted 'macro photography' as requiring detailed technical specifications",
+      "Added professional photography constraints not explicitly requested",
+      "Structured data hierarchically by equipment and scene elements",
+      "Used industry-standard terminology throughout"
+    ],
+    "similarityToOthers": []
+  },
+  "validation": {
+    "jsonValid": true,
+    "schemaCompliance": true,
+    "qualityScore": 8.5,
+    "notes": "Comprehensive technical scene object with professional photography specifications. Well-structured hierarchy and detailed parameters."
+  }
+}

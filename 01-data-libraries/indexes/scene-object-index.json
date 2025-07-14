@@ -1,0 +1,49 @@
+{
+  "index": {
+    "version": "1.0.0",
+    "lastUpdated": "2025-07-14T20:45:00Z",
+    "totalEntries": 0,
+    "categories": {
+      "character-interaction": 0,
+      "environment-description": 0,
+      "action-sequence": 0,
+      "dialogue-scene": 0,
+      "emotional-moment": 0,
+      "technical-description": 0,
+      "creative-narrative": 0,
+      "instructional-content": 0,
+      "other": 0
+    },
+    "sources": {
+      "chatgpt-3.5": 0,
+      "chatgpt-4": 0,
+      "chatgpt-4-turbo": 0,
+      "other": 0
+    },
+    "complexity": {
+      "simple": 0,
+      "moderate": 0,
+      "complex": 0,
+      "highly-complex": 0
+    }
+  },
+  "entries": [],
+  "searchTags": {
+    "structural": [],
+    "content": [],
+    "prompt-types": [],
+    "patterns": []
+  },
+  "analytics": {
+    "averagePromptLength": 0,
+    "averageObjectComplexity": 0,
+    "commonPatterns": [],
+    "insights": []
+  },
+  "usage": {
+    "howToAdd": "Use the addSceneObject() function with prompt text and scene object JSON",
+    "namingConvention": "scene-YYYYMMDD-HHMMSS format for IDs",
+    "requiredFields": ["metadata", "prompt", "sceneObject", "analysis"],
+    "autoAnalysis": "System automatically analyzes structure, patterns, and alignment"
+  }
+}
